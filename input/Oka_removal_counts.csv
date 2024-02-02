@@ -1,0 +1,512 @@
+﻿Species/Genus,ID#,DBH Diameter (cm),Time,Removal Height (cm),Quantity Removed,Distance from site (m),Observers,Notes,Entered by
+White Pine,159-1,7,10:30,<40,low,0,"Noa, Riana, Kenneth",,
+White Pine,159-1,7,10:30,>40,low,0,"Noa, Riana, Kenneth",,
+White Pine,159-1,7,10:30,out of reach,high,0,"Noa, Riana, Kenneth",,
+Oak,159-2,13.5,10:30,<40,high,0,"Noa, Riana, Kenneth",Many eggs in crevices at base of tree,
+Oak,159-2,13.5,10:30,>40,low,0,"Noa, Riana, Kenneth",,
+Oak,159-2,13.5,10:30,out of reach,medium,0,"Noa, Riana, Kenneth",,
+White Pine,159-3,12.5,10:30,<40,high,2,"Noa, Riana, Kenneth",,
+White Pine,159-3,12.5,10:30,>40,medium,2,"Noa, Riana, Kenneth",,
+White Pine,159-3,12.5,10:30,out of reach,high,2,"Noa, Riana, Kenneth",,
+White Pine,159-4,9,10:30,<40,low,2,"Noa, Riana, Kenneth",,
+White Pine,159-4,9,10:30,>40,low,2,"Noa, Riana, Kenneth",,
+White Pine,159-4,9,10:30,out of reach,low,2,"Noa, Riana, Kenneth",,
+Maple,159-5,8,10:30,<40,low,1,"Noa, Riana, Kenneth",,
+Maple,159-5,8,10:30,>40,low,1,"Noa, Riana, Kenneth",,
+Maple,159-5,8,10:30,out of reach,low,1,"Noa, Riana, Kenneth",,
+Maple,159-6,5.5,10:30,<40,low,2,"Noa, Riana, Kenneth",,
+Maple,159-6,5.5,10:30,>40,undetected,2,"Noa, Riana, Kenneth",,
+Maple,159-6,5.5,10:30,out of reach,undetected,2,"Noa, Riana, Kenneth",,
+Maple,159-7,3.5,10:30,<40,low,2,"Noa, Riana, Kenneth",,
+Maple,159-7,3.5,10:30,>40,low,2,"Noa, Riana, Kenneth",,
+Maple,159-7,3.5,10:30,out of reach,low,2,"Noa, Riana, Kenneth",,
+Maple,159-8,?,10:30,<40,low,2,"Noa, Riana, Kenneth",,
+Maple,159-8,?,10:30,>40,undetected,2,"Noa, Riana, Kenneth",,
+Maple,159-8,?,10:30,out of reach,low,2,"Noa, Riana, Kenneth",,
+Birch,159-9,14,11:30,<40,high,2,"Noa, Riana, Kenneth",,
+Birch,159-9,14,11:30,>40,medium,2,"Noa, Riana, Kenneth",,
+Birch,159-9,14,11:30,out of reach,medium,2,"Noa, Riana, Kenneth",,
+Oak,159-10,24,11:30,<40,low,1,"Noa, Riana, Kenneth",,
+Oak,159-10,24,11:30,>40,undetected,1,"Noa, Riana, Kenneth",,
+Oak,159-10,24,11:30,out of reach,low,1,"Noa, Riana, Kenneth",,
+Pine,159-11,20.5,11:30,<40,low,1,"Noa, Riana, Kenneth",,
+Pine,159-11,20.5,11:30,>40,undetected,1,"Noa, Riana, Kenneth",,
+Pine,159-11,20.5,11:30,out of reach,low,1,"Noa, Riana, Kenneth",,
+Oak,159-12,15,11:30,<40,high,1,"Noa, Riana, Kenneth",,
+Oak,159-12,15,11:30,>40,high,1,"Noa, Riana, Kenneth",,
+Oak,159-12,15,11:30,out of reach,high,1,"Noa, Riana, Kenneth",,
+Maple,159-13,2.5,11:30,<40,low,2,"Noa, Riana, Kenneth",,
+Maple,159-13,2.5,11:30,>40,low,2,"Noa, Riana, Kenneth",,
+Maple,159-13,2.5,11:30,out of reach,undetected,2,"Noa, Riana, Kenneth",,
+Maple,159-14,1,11:30,<40,low,2,"Noa, Riana, Kenneth",,
+Maple,159-14,1,11:30,>40,low,2,"Noa, Riana, Kenneth",,
+Maple,159-14,1,11:30,out of reach,undetected,2,"Noa, Riana, Kenneth",,
+Oak,159-15,6,11:30,<40,undetected,2,"Noa, Riana, Kenneth",,
+Oak,159-15,6,11:30,>40,undetected,2,"Noa, Riana, Kenneth",,
+Oak,159-15,6,11:30,out of reach,low,2,"Noa, Riana, Kenneth",,
+Oak,159-16,5,11:30,<40,undetected,2,"Noa, Riana, Kenneth",,
+Oak,159-16,5,11:30,>40,low,2,"Noa, Riana, Kenneth",,
+Oak,159-16,5,11:30,out of reach,low,2,"Noa, Riana, Kenneth",,
+Oak,159-17,5,13:00,<40,low,2,"Riana, Kenneth",,
+Oak,159-17,5,13:00,>40,undetected,2,"Riana, Kenneth",,
+Oak,159-17,5,13:00,out of reach,low,2,"Riana, Kenneth",,
+Oak,159-18,60,13:00,<40,high,1,"Riana, Kenneth",,
+Oak,159-18,60,13:00,>40,high,1,"Riana, Kenneth",,
+Oak,159-18,60,13:00,out of reach,high,1,"Riana, Kenneth",,
+Oak,159-19,64,13:00,<40,high,2,"Riana, Kenneth",,
+Oak,159-19,64,13:00,>40,high,2,"Riana, Kenneth",,
+Oak,159-19,64,13:00,out of reach,high,2,"Riana, Kenneth",,
+Birch,159-20,5,13:00,<40,undetected,2,"Riana, Kenneth",,
+Birch,159-20,5,13:00,>40,undetected,2,"Riana, Kenneth",,
+Birch,159-20,5,13:00,out of reach,low,2,"Riana, Kenneth",,
+Pine,159-21,20,13:00,<40,low,1,"Riana, Kenneth",,
+Pine,159-21,20,13:00,>40,undetected,1,"Riana, Kenneth",,
+Pine,159-21,20,13:00,out of reach,low,1,"Riana, Kenneth",,
+Pine,159-22,14,13:00,<40,low,2,"Riana, Kenneth",,
+Pine,159-22,14,13:00,>40,undetected,2,"Riana, Kenneth",,
+Pine,159-22,14,13:00,out of reach,high,2,"Riana, Kenneth",,
+Birch,159-23,5,13:00,<40,undetected,2,"Riana, Kenneth",,
+Birch,159-23,5,13:00,>40,low,2,"Riana, Kenneth",,
+Birch,159-23,5,14:00,out of reach,low,2,"Riana, Kenneth",,
+Maple,159-24,1,14:00,<40,undetected,1,"Riana, Kenneth",,
+Maple,159-24,1,14:00,>40,low,1,"Riana, Kenneth",,
+Maple,159-24,1,14:00,out of reach,undetected,1,"Riana, Kenneth",,
+Maple,159-25,3,14:00,<40,low,2,"Riana, Kenneth",,
+Maple,159-25,3,14:00,>40,low,2,"Riana, Kenneth",,
+Maple,159-25,3,14:00,out of reach,undetected,2,"Riana, Kenneth",,
+Pine,159-26,11,14:00,<40,undetected,2,"Riana, Kenneth",Dead,
+Pine,159-26,11,14:00,>40,low,2,"Riana, Kenneth",,
+Pine,159-26,11,14:00,out of reach,undetected,2,"Riana, Kenneth",,
+Maple,159-27,5,14:00,<40,low,2,"Riana, Kenneth",,
+Maple,159-27,5,14:00,>40,undetected,2,"Riana, Kenneth",,
+Maple,159-27,5,14:00,out of reach,medium,2,"Riana, Kenneth",,
+Birch,159-28,3,14:00,<40,undetected,?,"Riana, Kenneth",,
+Birch,159-28,3,14:00,>40,low,?,"Riana, Kenneth",,
+Birch,159-28,3,14:00,out of reach,undetected,?,"Riana, Kenneth",,
+White Pine,160-1,50.5,10:50,<40,high,0,"Bella, Lingshan, Marie-Eve",,
+White Pine,160-1,50.5,10:50,>40,medium,0,"Bella, Lingshan, Marie-Eve",,
+White Pine,160-1,50.5,10:50,out of reach,high,0,"Bella, Lingshan, Marie-Eve",,
+Red Oak,160-2,51,10:50,<40,medium,0,"Bella, Lingshan, Marie-Eve",,
+Red Oak,160-2,51,10:50,>40,high,0,"Bella, Lingshan, Marie-Eve",,
+Red Oak,160-2,51,10:50,out of reach,high,0,"Bella, Lingshan, Marie-Eve",,
+Red Oak,160-3,36.8,10:50,<40,high,2,"Bella, Lingshan, Marie-Eve",95% of masses on S-W side,
+Red Oak,160-3,36.8,10:50,>40,high,2,"Bella, Lingshan, Marie-Eve",,
+Red Oak,160-3,36.8,10:50,out of reach,high,2,"Bella, Lingshan, Marie-Eve",,
+White Birch,160-4,13.2,11:20,<40,high,0,"Bella, Lingshan, Marie-Eve",,
+White Birch,160-4,13.2,11:20,>40,low,0,"Bella, Lingshan, Marie-Eve",,
+White Birch,160-4,13.2,11:20,out of reach,high,0,"Bella, Lingshan, Marie-Eve",infested in areas out of reach,
+White Birch,160-5,10.2,11:20,<40,low,0,"Bella, Lingshan, Marie-Eve",,
+White Birch,160-5,10.2,11:20,>40,high,0,"Bella, Lingshan, Marie-Eve",,
+White Birch,160-5,10.2,11:20,out of reach,high,0,"Bella, Lingshan, Marie-Eve",,
+White Birch,160-6,15.1,11:20,<40,low,0,"Bella, Lingshan, Marie-Eve",,
+White Birch,160-6,15.1,11:20,>40,undetected,0,"Bella, Lingshan, Marie-Eve",,
+White Birch,160-6,15.1,11:20,out of reach,low,0,"Bella, Lingshan, Marie-Eve",,
+Red Maple,160-7,4.8,11:20,<40,low,2,"Bella, Lingshan, Marie-Eve",,
+Red Maple,160-7,4.8,11:20,>40,undetected,2,"Bella, Lingshan, Marie-Eve",,
+Red Maple,160-7,4.8,11:20,out of reach,low,2,"Bella, Lingshan, Marie-Eve",,
+Red Maple,160-8,7.9,11:20,<40,medium,2,"Bella, Lingshan, Marie-Eve",,
+Red Maple,160-8,7.9,11:20,>40,low,2,"Bella, Lingshan, Marie-Eve",,
+Red Maple,160-8,7.9,11:20,out of reach,high,2,"Bella, Lingshan, Marie-Eve",,
+Red Maple,160-9,2.5,11:45,<40,undetected,2,"Bella, Lingshan, Marie-Eve",less than 2m tall,
+Red Maple,160-9,2.5,11:45,>40,low,2,"Bella, Lingshan, Marie-Eve",,
+Red Maple,160-10,2.5,11:45,<40,undetected,2,"Bella, Lingshan, Marie-Eve",less than 2m tall,
+Red Maple,160-10,2.5,11:45,>40,low,2,"Bella, Lingshan, Marie-Eve",,
+White Pine,160-11,2.5,11:45,<40,low,1,"Bella, Lingshan, Marie-Eve",less than 2m tall,
+White Pine,160-11,2.5,11:45,>40,undetected,1,"Bella, Lingshan, Marie-Eve",,
+White Pine,160-12,2.5,11:45,<40,low,1,"Bella, Lingshan, Marie-Eve",less than 2m tall,
+White Pine,160-12,2.5,11:45,>40,undetected,1,"Bella, Lingshan, Marie-Eve",,
+Red Maple,160-13,3.3,11:45,<40,low,2,"Bella, Lingshan, Marie-Eve",,
+Red Maple,160-13,3.3,11:45,>40,low,2,"Bella, Lingshan, Marie-Eve",,
+Red Maple,160-13,3.3,11:45,out of reach,undetected,2,"Bella, Lingshan, Marie-Eve",,
+White Birch,160-14,6.1,11:45,<40,?,?,"Bella, Lingshan, Marie-Eve",,
+White Birch,160-14,6.1,11:45,>40,?,?,"Bella, Lingshan, Marie-Eve",,
+White Birch,160-14,6.1,11:45,out of reach,undetected,?,"Bella, Lingshan, Marie-Eve",,
+Dead tree,160-15,2.5,11:45,<40,low,2,"Bella, Lingshan, Marie-Eve",,
+Dead tree,160-15,2.5,11:45,>40,low,2,"Bella, Lingshan, Marie-Eve",,
+Dead tree,160-15,2.5,11:45,out of reach,undetected,2,"Bella, Lingshan, Marie-Eve",,
+Dead tree,160-16,2,11:45,<40,low,2,"Bella, Lingshan, Marie-Eve",,
+Dead tree,160-16,2,11:45,>40,undetected,2,"Bella, Lingshan, Marie-Eve",,
+Dead tree,160-16,2,11:45,out of reach,low,2,"Bella, Lingshan, Marie-Eve",,
+Silver Maple,160-17,25,13:50,<40,high,2,"Emma, Lingshan, Bella",more than 10 egg masses out of reach,Victoria
+Silver Maple,160-17,25,13:50,>40,low,2,"Emma, Lingshan, Bella",,Victoria
+Red Oak,160-18,26.9,13:54,<40,high,2,"Emma, Lingshan, Bella",more than 10 egg masses out of reach,Victoria
+Red Oak,160-18,26.9,13:54,>40,medium,2,"Emma, Lingshan, Bella",,Victoria
+White Pine,160-19,18.8,14:00,<40,low,2,"Emma, Lingshan, Bella",low count of egg masses out of reach,Victoria
+White Pine,160-20,21.8,14:00,>40,low,2,"Emma, Lingshan, Bella",medium count of egg masses out of reach,Victoria
+White Pine,171-1,8.6,15:55,<40,low,2,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+White Pine,171-1,8.6,15:55,>40,undetected,2,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+White Pine,171-2,4.2,15:55,<40,low,2,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+White Pine,171-2,4.2,15:55,>40,undetected,2,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+White Pine,171-3,3.6,15:55,<40,low,2,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+White Pine,171-3,30.7,15:55,<40,medium,2,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+White Pine,171-4,30.7,15:55,>40,low,2,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+White Pine,171-5,39.1,15:55,<40,medium,1,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+White Pine,171-5,39.1,15:55,>40,low,1,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+White Pine,171-6,50,15:55,<40,high,0,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+White Pine,171-6,50,15:55,>40,high,0,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+White Pine,171-7,24.3,15:55,<40,high,2,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+White Pine,171-7,24.3,15:55,>40,low,2,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+White Pine,171-8,7.1,15:55,<40,medium,2,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+White Pine,171-8,7.1,15:55,>40,low,2,"Emma, Lingshan, Bella, Georgia C.",,Victoria
+Red Maple,160-21,2.5,14:05,<40,low,2,"Emma, Lingshan, Bella",less than 2m tall,Victoria
+Red Oak,160-22,46,14:05,<40,high,2,"Emma, Lingshan, Bella",multiple trunks,Victoria
+Red Oak,160-22,46,14:05,>40,high,2,"Emma, Lingshan, Bella",multiple trunks,Victoria
+Red Oak,160-23,2.5,14:10,<40,low,2,"Emma, Lingshan, Bella",less than 2m tall,Victoria
+White Pine,161-1,36.9,13:55,<40,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-1,36.9,13:55,>40,medium,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-1,36.9,13:55,out of reach,medium,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-2,19.5,13:56,<40,medium,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-2,19.5,13:56,>40,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-2,19.5,13:56,out of reach,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-3,42.1,14:07,<40,high,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-3,42.1,14:07,>40,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-3,42.1,14:07,out of reach,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-4,28.5,14:29,<40,high,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-4,28.5,14:29,>40,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-4,28.5,14:29,out of reach,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-5,36.3,14:32,<40,high,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-5,36.3,14:32,>40,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-5,36.3,14:32,out of reach,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-6,29,14:41,<40,medium,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-6,29,14:41,>40,medium,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-6,29,14:41,out of reach,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-7,46.2,14:46,<40,high,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-7,46.2,14:46,>40,high,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-7,46.2,14:46,out of reach,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-8,40.1,14:57,<40,high,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-8,40.1,14:57,>40,medium,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-8,40.1,14:57,out of reach,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-9,43.3,?,<40,high,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-9,43.3,?,>40,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,161-9,43.3,?,out of reach,low,2,"Giselle, Kayleigh",,Victoria
+Red Oak,162-1,48.1,10:53,<40,high,1,"Kayleigh, Giselle, Georgia C.",,Victoria
+Red Oak,162-1,48.1,10:53,>40,high,1,"Kayleigh, Giselle, Georgia C.",,Victoria
+Red Oak,162-1,48.1,10:53,out of reach,high,1,"Kayleigh, Giselle, Georgia C.",,Victoria
+Red Maple,162-2,4.9,11:03,<40,medium,1,"Kayleigh, Giselle, Georgia C.",multiple trunks,Victoria
+Red Maple,162-2,4.9,11:03,>40,low,1,"Kayleigh, Giselle, Georgia C.",multiple trunks,Victoria
+Red Maple,162-2,4.9,11:03,out of reach,low,1,"Kayleigh, Giselle, Georgia C.",multiple trunks,Victoria
+Red Maple,162-3,4,11:18,<40,low,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+Red Maple,162-3,4,11:18,>40,low,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+Red Maple,162-3,4,11:18,out of reach,low,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+White Pine,162-4,31.2,11:24,<40,low,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+White Pine,162-4,31.2,11:24,>40,low,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+White Pine,162-4,31.2,11:24,out of reach,low,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+White Pine,162-5,30.1,11:26,<40,low,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+White Pine,162-5,30.1,11:26,>40,low,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+White Pine,162-5,30.1,11:26,out of reach,low,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+White Pine,162-6,39.8,11:29,<40,high,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+White Pine,162-6,39.8,11:29,>40,low,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+White Pine,162-6,39.8,11:29,out of reach,low,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+Red Oak,162-7,136.7,11:40,<40,high,2,"Kayleigh, Giselle, Georgia C.",multiple trunks,Victoria
+Red Oak,162-7,136.7,11:40,>40,high,2,"Kayleigh, Giselle, Georgia C.",multiple trunks,Victoria
+Red Oak,162-7,136.7,11:40,out of reach,high,2,"Kayleigh, Giselle, Georgia C.",multiple trunks,Victoria
+Red Maple,162-8,16.4,11:54,<40,low,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+Red Maple,162-8,16.4,11:54,>40,low,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+Red Maple,162-8,16.4,11:54,out of reach,low,2,"Kayleigh, Giselle, Georgia C.",,Victoria
+Red Maple,163-1,6.5,10:51,<40,low,0,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-2,9,10:54,<40,medium,0,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-2,9,10:54,>40,low,0,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+White Pine,163-3,19,10:56,<40,high,0,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+White Pine,163-3,19,10:56,>40,medium,0,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+White Pine,163-4,1,10:57,<40,low,0,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-5,2,10:59,<40,low,0,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-6,8,11:00,<40,low,2,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+White Pine,163-7,1,11:05,>40,low,2,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",Dead,Victoria
+Red Maple,163-8,7,11:05,<40,low,2,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-8,7,11:06,>40,low,2,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-9,2,11:07,<40,low,1,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-10,4,11:10,<40,medium,2,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",Beetle (L. atra) on egg mass,Victoria
+Red Oak,163-11,46,11:12,<40,high,1,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",Lots of egg masses found at base of tree,Victoria
+Red Oak,163-11,46,11:12,>40,high,1,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Oak,163-12,33,11:16,<40,high,2,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Oak,163-12,33,11:16,>40,high,2,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-13,11,11:28,<40,low,0,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-13,11,11:28,>40,low,0,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+White Oak,163-14,12,11:37,<40,low,2,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+White Oak,163-14,12,11:37,>40,undetected,2,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-15,3,11:38,<40,undetected,3,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-15,3,11:38,>40,low,3,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+White Pine,163-16,1,11:39,<40,undetected,3,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+White Pine,163-16,1,11:39,>40,low,3,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-17,3,11:39,<40,low,3,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-17,3,11:39,>40,low,3,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-18,8.5,11:41,<40,low,3,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-18,8.5,11:41,>40,low,3,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-19,7,11:42,<40,low,?,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-19,7,11:42,>40,low,?,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-20,11,11:45,<40,medium,?,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",multiple trunks,Victoria
+Red Maple,163-20,11,11:45,<40,medium,?,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",multiple trunks,Victoria
+Red Maple,163-21,22,11:46,>40,medium,3,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+White Pine,163-22,17,11:53,<40,high,0,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+White Pine,163-22,17,11:53,>40,low,0,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+White Pine,163-23,14,11:56,<40,high,3.5,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+White Pine,163-23,14,11:56,>40,low,3.5,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-24,8,11:57,<40,low,1,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-24,8,11:57,>40,low,1,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Oak,163-25,52,12:01,<40,high,1,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Oak,163-25,52,12:01,>40,low,1,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-26,11,12:06,<40,low,1,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+Red Maple,163-26,11,12:06,>40,low,1,"Iris, Marc-Antoine, Emma, Gabriel, Georgia D.",,Victoria
+White Pine,164-1,61.3,15:30,<40,high,2,"Giselle, Kayleigh",,Victoria
+White Pine,164-1,61.3,15:30,>40,medium,2,"Giselle, Kayleigh",,Victoria
+White Pine,164-1,61.3,15:30,out of reach,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,164-2,38.1,15:41,<40,low,1,"Giselle, Kayleigh",,Victoria
+White Pine,164-2,38.1,15:41,>40,low,1,"Giselle, Kayleigh",,Victoria
+White Pine,164-2,38.1,15:41,out of reach,low,1,"Giselle, Kayleigh",,Victoria
+White Pine,164-3,60.8,15:50,<40,high,1,"Giselle, Kayleigh",,Victoria
+White Pine,164-3,60.8,15:50,>40,medium,1,"Giselle, Kayleigh",,Victoria
+White Pine,164-3,60.8,15:50,out of reach,low,1,"Giselle, Kayleigh",,Victoria
+White Pine,164-4,25.1,15:55,<40,undetected,2,"Giselle, Kayleigh",,Victoria
+White Pine,164-4,25.1,15:55,>40,low,2,"Giselle, Kayleigh",,Victoria
+White Pine,164-4,25.1,15:55,out of reach,low,2,"Giselle, Kayleigh",,Victoria
+Red Maple,164-5,5.9,16:02,<40,low,1,"Giselle, Kayleigh",,Victoria
+Red Maple,164-5,5.9,16:02,>40,low,1,"Giselle, Kayleigh",,Victoria
+Red Maple,164-5,5.9,16:02,out of reach,low,1,"Giselle, Kayleigh",,Victoria
+Red Maple,164-6,7.7,16:08,<40,low,1,"Giselle, Kayleigh",,Victoria
+Red Maple,164-6,7.7,16:08,>40,low,1,"Giselle, Kayleigh",,Victoria
+Red Maple,164-6,7.7,16:08,out of reach,low,1,"Giselle, Kayleigh",,Victoria
+Red Maple,164-7,7.7,16:10,<40,medium,2,"Giselle, Kayleigh",,Victoria
+Red Maple,164-7,7.7,16:10,>40,low,2,"Giselle, Kayleigh",,Victoria
+Red Maple,164-7,7.7,16:10,out of reach,low,2,"Giselle, Kayleigh",,Victoria
+Red Maple,164-8,7.7,16:12,<40,low,2,"Giselle, Kayleigh",,Victoria
+Red Maple,164-8,7.7,16:12,>40,low,2,"Giselle, Kayleigh",,Victoria
+Red Maple,164-8,7.7,16:12,out of reach,low,2,"Giselle, Kayleigh",,Victoria
+Red Maple,164-9,2.4,16:15,<40,low,?,"Giselle, Kayleigh",,Victoria
+Red Maple,164-9,2.4,16:15,>40,low,?,"Giselle, Kayleigh",,Victoria
+Red Maple,164-9,2.4,16:15,out of reach,low,?,"Giselle, Kayleigh",,Victoria
+White Pine,165-1,38,13:54,<40,high,0,"Georgia D., Iris",,Victoria
+White Pine,165-1,38,13:54,>40,low,0,"Georgia D., Iris",,Victoria
+White Pine,165-2,17.5,13:56,<40,low,1,"Georgia D., Iris",,Victoria
+White Pine,165-2,17.5,13:56,>40,low,1,"Georgia D., Iris",,Victoria
+Pine,165-3,21,13:59,<40,medium,1,"Georgia D., Iris",Tree stump,Victoria
+Ash,165-4,49.5,14:03,<40,high,1,"Georgia D., Iris",,Victoria
+Ash,165-4,49.5,14:03,>40,medium,1,"Georgia D., Iris",,Victoria
+Red Maple,165-5,18,14:11,<40,high,?,"Georgia D., Iris",,Victoria
+Red Maple,165-5,18,14:11,>40,medium,?,"Georgia D., Iris",,Victoria
+Red Maple,165-6,1,14:26,<40,low,2,"Georgia D., Iris",,Victoria
+Red Maple,165-6,1,14:16,>40,low,2,"Georgia D., Iris",,Victoria
+White Pine,165-7,38,14:17,<40,high,0,"Georgia D., Iris",,Victoria
+White Pine,165-7,38,14:17,>40,low,0,"Georgia D., Iris",,Victoria
+Red Maple,165-8,1.5,14:22,<40,low,2,"Georgia D., Iris",,Victoria
+Red Maple,165-8,1.5,14:22,>40,high,2,"Georgia D., Iris",,Victoria
+Red Maple,165-9,1,14:23,<40,low,2,"Georgia D., Iris",,Victoria
+Red Maple,165-10,1,14:26,<40,low,1,"Georgia D., Iris",,Victoria
+White Pine,165-11,35.5,14:27,<40,high,2,"Georgia D., Iris",,Victoria
+White Pine,165-11,35.5,14:27,>40,low,2,"Georgia D., Iris",,Victoria
+Red Maple,165-12,2,14:29,<40,low,2,"Georgia D., Iris",,Victoria
+Red Maple,165-12,2,14:29,>40,low,2,"Georgia D., Iris",,Victoria
+Red Maple,165-13,5,14:30,<40,low,?,"Georgia D., Iris",,Victoria
+Red Maple,165-13,5,14:30,>40,low,?,"Georgia D., Iris",,Victoria
+Red Maple,165-14,2.5,14:31,<40,low,1,"Georgia D., Iris",,Victoria
+Red Maple,165-15,5,14:32,<40,medium,1,"Georgia D., Iris",,Victoria
+Red Maple,165-15,5,14:32,>40,low,1,"Georgia D., Iris",,Victoria
+White Pine,165-16,43,14:33,<40,low,1,"Georgia D., Iris",,Victoria
+White Pine,165-16,43,14:33,>40,high,1,"Georgia D., Iris",,Victoria
+White Pine,165-17,38.5,14:35,<40,high,0,"Georgia D., Iris",,Victoria
+White Pine,165-17,38.5,14:35,>40,high,0,"Georgia D., Iris",,Victoria
+Red Maple,165-18,1,14:41,<40,low,1,"Georgia D., Iris",,Victoria
+Red Oak,165-19,180,14:47,<40,high,0,"Georgia D., Iris",multiple trunks,Victoria
+Red Oak,165-19,180,14:47,>40,high,0,"Georgia D., Iris",multiple trunks,Victoria
+Red Maple,165-20,5.5,15:02,<40,medium,2,"Georgia D., Iris",,Victoria
+Red Maple,165-20,5.5,15:02,>40,low,2,"Georgia D., Iris",,Victoria
+Red Oak,165-21,81,15:07,<40,high,1,"Georgia D., Iris",multiple trunks,Victoria
+Red Oak,165-21,81,15:07,>40,low,1,"Georgia D., Iris",multiple trunks,Victoria
+Red Maple,167-1,2.5,14:00,<40,low,1,"Marie-Eve, Marc-Antoine",less than 2m tall,Victoria
+White Pine,167-2,152,14:05,<40,high,1,"Marie-Eve, Marc-Antoine",More egg masses out of reach,Victoria
+White Pine,167-2,152,14:05,>40,undetected,1,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-3,116,14:10,<40,low,0,"Marie-Eve, Marc-Antoine",More egg masses out of reach,Victoria
+White Pine,167-3,116,14:10,>40,?,0,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-4,113,14:35,<40,low,2,"Marie-Eve, Marc-Antoine",More egg masses out of reach,Victoria
+White Pine,167-4,113,14:35,>40,low,2,"Marie-Eve, Marc-Antoine",,Victoria
+Red Oak,167-5,10.1,14:25,<40,low,2,"Marie-Eve, Marc-Antoine",Many egg masses out of reach,Victoria
+Red Oak,167-5,10.1,14:25,>40,low,2,"Marie-Eve, Marc-Antoine",,Victoria
+Red Oak,167-6,9,14:30,<40,low,1,"Marie-Eve, Marc-Antoine",No egg masses at >40 height,Victoria
+Red Maple,167-7,1.6,14:40,<40,undetected,2,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-8,1.5,14:42,<40,low,2.5,"Marie-Eve, Marc-Antoine",Dead,Victoria
+White Pine,167-8,1.5,14:42,>40,undetected,2.5,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-9,1.5,14:42,<40,low,2.5,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-10,120,14:44,<40,undetected,1,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-10,120,14:44,>40,low,1,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-11,138,14:47,<40,medium,1,"Marie-Eve, Marc-Antoine",Mossy tree,Victoria
+White Pine,167-11,138,14:47,>40,low,1,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-12,156,14:57,<40,high,0,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-12,156,14:57,>40,low,0,"Marie-Eve, Marc-Antoine",,Victoria
+Birch,167-13,2,15:01,<40,low,1,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-14,1,15:01,<40,undetected,1,"Marie-Eve, Marc-Antoine",Dead,Victoria
+White Pine,167-14,1,15:01,>40,low,1,"Marie-Eve, Marc-Antoine",Many egg masses out of reach,Victoria
+White Pine,167-15,1.7,15:06,<40,medium,1,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-15,1.7,15:06,>40,low,1,"Marie-Eve, Marc-Antoine",,Victoria
+Red Oak,167-16,1.2,15:12,<40,low,?,"Marie-Eve, Marc-Antoine",,Victoria
+Red Oak,167-16,1.2,15:12,>40,low,?,"Marie-Eve, Marc-Antoine",,Victoria
+Pine,167-17,72,?,<40,high,1,"Marie-Eve, Marc-Antoine",,Victoria
+Pine,167-17,72,?,>40,high,1,"Marie-Eve, Marc-Antoine",,Victoria
+Pine,167-17,72,?,out of reach,high,1,"Marie-Eve, Marc-Antoine",,Victoria
+Red Maple,167-18,10,15:16,<40,low,2,"Marie-Eve, Marc-Antoine",,Victoria
+Red Maple,167-18,10,15:16,>40,low,2,"Marie-Eve, Marc-Antoine",,Victoria
+Pine,167-19,31.5,?,<40,high,2,"Marie-Eve, Marc-Antoine",,Victoria
+Pine,167-19,31.5,?,>40,low,2,"Marie-Eve, Marc-Antoine",,Victoria
+Pine,167-19,31.5,?,out of reach,medium,2,"Marie-Eve, Marc-Antoine",,Victoria
+American Beech,167-20,60.5,15:20,<40,medium,2,"Marie-Eve, Marc-Antoine",,Victoria
+American Beech,167-20,60.5,15:20,>40,high,2,"Marie-Eve, Marc-Antoine",,Victoria
+Pine,167-21,33.5,?,<40,high,1,"Marie-Eve, Marc-Antoine",,Victoria
+Pine,167-21,33.5,?,>40,low,1,"Marie-Eve, Marc-Antoine",,Victoria
+Pine,167-21,33.5,?,out of reach,low,1,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-22,80.5,15:23,<40,high,2,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-22,80.5,15:23,>40,high,2,"Marie-Eve, Marc-Antoine",,Victoria
+Beech,167-23,7,15:36,<40,low,2,"Marie-Eve, Marc-Antoine",,Victoria
+Beech,167-23,7,15:36,>40,undetected,2,"Marie-Eve, Marc-Antoine",,Victoria
+Red Maple,167-24,1,15:29,<40,low,?,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-25,220,15:52,<40,high,0,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-25,220,15:52,>40,high,0,"Marie-Eve, Marc-Antoine",,Victoria
+Beech,167-26,45,15:45,<40,low,2,"Marie-Eve, Marc-Antoine",multiple trunks,Victoria
+Beech,167-26,45,15:45,>40,low,2,"Marie-Eve, Marc-Antoine",multiple trunks,Victoria
+White Pine,167-27,60.5,15:42,<40,low,2,"Marie-Eve, Marc-Antoine",,Victoria
+White Pine,167-27,60.5,15:42,>40,high,2,"Marie-Eve, Marc-Antoine",,Victoria
+Red Maple,167-28,2,15:40,<40,low,1.5,"Marie-Eve, Marc-Antoine",,Victoria
+Maple,168-1,25,14:00,<40,high,2,"Georgia C., Noa",,Victoria
+Maple,168-1,25,14:00,>40,low,2,"Georgia C., Noa",,Victoria
+Maple,168-1,25,14:00,out of reach,high,2,"Georgia C., Noa",,Victoria
+Pine,168-2,36.5,14:00,<40,high,1,"Georgia C., Noa",,Victoria
+Pine,168-2,36.5,14:00,>40,low,1,"Georgia C., Noa",,Victoria
+Pine,168-2,36.5,14:00,out of reach,high,1,"Georgia C., Noa",,Victoria
+Pine,168-3,29,14:00,<40,medium,2,"Georgia C., Noa",,Victoria
+Pine,168-3,29,14:00,>40,low,2,"Georgia C., Noa",,Victoria
+Pine,168-3,29,14:00,out of reach,high,2,"Georgia C., Noa",,Victoria
+Pine,168-4,11.5,14:00,<40,low,1,"Georgia C., Noa",,Victoria
+Pine,168-4,11.5,14:00,>40,undetected,1,"Georgia C., Noa",,Victoria
+Pine,168-4,11.5,14:00,out of reach,undetected,1,"Georgia C., Noa",,Victoria
+Maple,168-5,40,14:00,<40,high,0,"Georgia C., Noa",multiple trunks,Victoria
+Maple,168-5,40,14:00,>40,low,0,"Georgia C., Noa",,Victoria
+Maple,168-5,40,14:00,out of reach,undetected,0,"Georgia C., Noa",,Victoria
+Oak,168-6,69.5,14:00,<40,high,1,"Georgia C., Noa",multiple trunks,Victoria
+Oak,168-6,69.5,14:00,>40,medium,1,"Georgia C., Noa",,Victoria
+Oak,168-6,69.5,14:00,out of reach,high,1,"Georgia C., Noa",,Victoria
+Oak,168-7,15,14:00,<40,medium,0,"Georgia C., Noa",,Victoria
+Oak,168-7,15,14:00,>40,low,0,"Georgia C., Noa",,Victoria
+Oak,168-7,15,14:00,out of reach,undetected,0,"Georgia C., Noa",,Victoria
+Oak,168-8,23.5,14:00,<40,high,0,"Georgia C., Noa",,Victoria
+Oak,168-8,23.5,14:00,>40,low,0,"Georgia C., Noa",,Victoria
+Oak,168-8,23.5,14:00,out of reach,undetected,0,"Georgia C., Noa",,Victoria
+Pine,168-9,8,14:00,<40,low,2,"Georgia C., Noa",,Victoria
+Pine,168-9,8,14:00,>40,low,2,"Georgia C., Noa",,Victoria
+Pine,168-9,8,14:00,out of reach,low,2,"Georgia C., Noa",,Victoria
+Oak,168-10,81,14:00,<40,high,0,"Georgia C., Noa",multiple trunks,Victoria
+Oak,168-10,81,14:00,>40,high,0,"Georgia C., Noa",,Victoria
+Oak,168-10,81,14:00,out of reach,high,0,"Georgia C., Noa",,Victoria
+Pine,168-11,22,14:00,<40,low,1,"Georgia C., Noa",,Victoria
+Pine,168-11,22,14:00,>40,undetected,1,"Georgia C., Noa",,Victoria
+Pine,168-11,22,14:00,out of reach,undetected,1,"Georgia C., Noa",,Victoria
+Pine,168-12,42.5,14:00,<40,medium,2,"Georgia C., Noa",,Victoria
+Pine,168-12,42.5,14:00,>40,low,2,"Georgia C., Noa",,Victoria
+Pine,168-12,42.5,14:00,out of reach,high,2,"Georgia C., Noa",,Victoria
+Birch,168-13,4,14:00,<40,undetected,1,"Georgia C., Noa",,Victoria
+Birch,168-13,4,14:00,>40,low,1,"Georgia C., Noa",,Victoria
+Birch,168-13,4,14:00,out of reach,undetected,1,"Georgia C., Noa",,Victoria
+Maple,168-14,2.5,14:00,<40,undetected,2,"Georgia C., Noa",,Victoria
+Maple,168-14,2.5,14:00,>40,low,2,"Georgia C., Noa",,Victoria
+Maple,168-14,2.5,14:00,out of reach,undetected,2,"Georgia C., Noa",,Victoria
+Pine,168-15,46.5,14:00,<40,high,1,"Georgia C., Noa",,Victoria
+Pine,168-15,46.5,14:00,>40,medium,1,"Georgia C., Noa",,Victoria
+Pine,168-15,46.5,14:00,out of reach,high,1,"Georgia C., Noa",,Victoria
+Pine,168-16,22,14:00,<40,medium,2,"Georgia C., Noa",,Victoria
+Pine,168-16,22,14:00,>40,low,2,"Georgia C., Noa",,Victoria
+Pine,168-16,22,14:00,out of reach,medium,2,"Georgia C., Noa",,Victoria
+Pine,168-17,41.5,14:00,<40,low,1,"Georgia C., Noa",,Victoria
+Pine,168-17,41.5,14:00,>40,low,1,"Georgia C., Noa",,Victoria
+Pine,168-17,41.5,14:00,out of reach,medium,1,"Georgia C., Noa",,Victoria
+Pine,168-18,12,14:00,<40,undetected,1,"Georgia C., Noa",,Victoria
+Pine,168-18,12,14:00,>40,low,1,"Georgia C., Noa",,Victoria
+Pine,168-18,12,14:00,out of reach,undetected,1,"Georgia C., Noa",,Victoria
+Pine,168-19,46.5,14:00,<40,medium,1,"Georgia C., Noa",,Victoria
+Pine,168-19,46.5,14:00,>40,medium,1,"Georgia C., Noa",,Victoria
+Pine,168-19,46.5,14:00,out of reach,medium,1,"Georgia C., Noa",,Victoria
+Oak,168-20,84,14:00,<40,high,0,"Georgia C., Noa",multiple trunks,Victoria
+Oak,168-20,84,14:00,>40,high,0,"Georgia C., Noa",,Victoria
+Oak,168-20,84,14:00,out of reach,medium,0,"Georgia C., Noa",,Victoria
+Pine,168-21,26.5,14:00,<40,high,1,"Georgia C., Noa",,Victoria
+Pine,168-21,26.5,14:00,>40,low,1,"Georgia C., Noa",,Victoria
+Pine,168-21,26.5,14:00,out of reach,low,1,"Georgia C., Noa",,Victoria
+Maple,168-22,3.5,14:00,<40,low,2,"Georgia C., Noa",,Victoria
+Maple,168-22,3.5,14:00,>40,undetected,2,"Georgia C., Noa",,Victoria
+Maple,168-22,3.5,14:00,out of reach,undetected,2,"Georgia C., Noa",,Victoria
+Pine,168-23,2,14:00,<40,low,2,"Georgia C., Noa",,Victoria
+Pine,168-23,2,14:00,>40,undetected,2,"Georgia C., Noa",,Victoria
+Pine,168-23,2,14:00,out of reach,undetected,2,"Georgia C., Noa",,Victoria
+Maple,168-24,1,14:00,<40,low,2,"Georgia C., Noa",,Victoria
+Maple,168-24,1,14:00,>40,undetected,2,"Georgia C., Noa",,Victoria
+Maple,168-24,1,14:00,out of reach,undetected,2,"Georgia C., Noa",,Victoria
+Oak,171-14,54.5,14:00,<40,medium,0,"Georgia C., Noa",,Victoria
+Oak,171-14,54.5,14:00,>40,low,0,"Georgia C., Noa",,Victoria
+Oak,171-14,54.5,14:00,out of reach,medium,0,"Georgia C., Noa",,Victoria
+Maple,171-15,3,14:00,<40,undetected,1,"Georgia C., Noa",,Victoria
+Maple,171-15,3,14:00,>40,low,1,"Georgia C., Noa",,Victoria
+Maple,171-15,3,14:00,out of reach,undetected,1,"Georgia C., Noa",,Victoria
+Pine,171-16,55.6,14:00,<40,high,0,"Georgia C., Noa",,Victoria
+Pine,171-16,55.6,14:00,>40,medium,0,"Georgia C., Noa",,Victoria
+Pine,171-16,55.6,14:00,out of reach,high,0,"Georgia C., Noa",,Victoria
+Maple,171-17,1,14:00,<40,low,1,"Georgia C., Noa",,Victoria
+Maple,171-17,1,14:00,>40,undetected,1,"Georgia C., Noa",,Victoria
+Maple,171-17,1,14:00,out of reach,undetected,1,"Georgia C., Noa",,Victoria
+Birch,171-18,1,14:00,<40,low,2,"Georgia C., Noa",,Victoria
+Birch,171-18,1,14:00,>40,undetected,2,"Georgia C., Noa",,Victoria
+Birch,171-18,1,14:00,out of reach,undetected,2,"Georgia C., Noa",,Victoria
+Birch,171-19,2,14:00,<40,low,2,"Georgia C., Noa",,Victoria
+bbi,171-19,2,14:00,>40,undetected,2,"Georgia C., Noa",,Victoria
+Birch,171-19,2,14:00,out of reach,undetected,2,"Georgia C., Noa",,Victoria
+Pine,171-20,3,14:00,<40,low,2,"Georgia C., Noa",,Victoria
+Pine,171-20,3,14:00,>40,low,2,"Georgia C., Noa",,Victoria
+Pine,171-20,3,14:00,out of reach,undetected,2,"Georgia C., Noa",,Victoria
+Pine,171-21,3,14:00,<40,low,2,"Georgia C., Noa",,Victoria
+Pine,171-21,3,14:00,>40,low,2,"Georgia C., Noa",,Victoria
+Pine,171-21,3,14:00,out of reach,undetected,2,"Georgia C., Noa",,Victoria
+Pine,171-22,3,14:00,<40,low,2,"Georgia C., Noa",,Victoria
+Pine,171-22,3,14:00,>40,undetected,2,"Georgia C., Noa",,Victoria
+Pine,171-22,3,14:00,out of reach,undetected,2,"Georgia C., Noa",,Victoria
+Hackberry,171-23,1,14:00,<40,undetected,2,"Georgia C., Noa",,Victoria
+Hackberry,171-23,1,14:00,>40,low,2,"Georgia C., Noa",,Victoria
+Hackberry,171-23,1,14:00,out of reach,undetected,2,"Georgia C., Noa",,Victoria
+Oak,171-9,41,14:00,<40,high,1,"Georgia C., Noa",,Victoria
+Oak,171-9,41,14:00,>40,low,1,"Georgia C., Noa",,Victoria
+Oak,171-9,41,14:00,out of reach,high,1,"Georgia C., Noa",,Victoria
+Pine,171-10,3,14:00,<40,low,1,"Georgia C., Noa",,Victoria
+Pine,171-10,3,14:00,>40,low,1,"Georgia C., Noa",,Victoria
+Pine,171-10,3,14:00,out of reach,undetected,1,"Georgia C., Noa",,Victoria
+Pine,171-11,3,14:00,<40,low,2,"Georgia C., Noa",,Victoria
+Pine,171-11,3,14:00,>40,low,2,"Georgia C., Noa",,Victoria
+Pine,171-11,3,14:00,out of reach,low,2,"Georgia C., Noa",,Victoria
+Pine,171-12,14,14:00,<40,low,1,"Georgia C., Noa",,Victoria
+Pine,171-12,14,14:00,>40,undetected,1,"Georgia C., Noa",,Victoria
+Pine,171-12,14,14:00,out of reach,undetected,1,"Georgia C., Noa",,Victoria
+Maple,171-13,2,14:00,<40,low,1,"Georgia C., Noa",,Victoria
+Maple,171-13,2,14:00,>40,low,1,"Georgia C., Noa",,Victoria
+Maple,171-13,2,14:00,out of reach,undetected,1,"Georgia C., Noa",,Victoria
+White Pine,170-1,43,14:26,<40,high,0,"Bella, Lingshan, Emma",,Victoria
+White Pine,170-1,43,14:26,>40,low,0,"Bella, Lingshan, Emma",,Victoria
+White Pine,170-2,55.5,14:32,<40,high,2,"Bella, Lingshan, Emma",5-10 egg masses out of reach,Victoria
+White Pine,170-2,55.5,14:32,>40,low,2,"Bella, Lingshan, Emma",,Victoria
+Red Oak,170-3,2.5,14:47,<40,low,1,"Bella, Lingshan, Emma",,Victoria
+Red Oak,170-4,2.5,14:50,<40,low,1,"Bella, Lingshan, Emma",,Victoria
+Red Oak,170-5,2.5,14:51,<40,low,2,"Bella, Lingshan, Emma",,Victoria
+White Pine,170-6,44.3,14:52,<40,high,2,"Bella, Lingshan, Emma",more than 10 egg masses out of reach,Victoria
+White Pine,170-6,44.3,14:52,>40,medium,2,"Bella, Lingshan, Emma",,Victoria
+White Pine,170-7,23.3,15:00,<40,high,2,"Bella, Lingshan, Emma",,Victoria
+White Pine,170-7,23.3,15:00,>40,low,2,"Bella, Lingshan, Emma",,Victoria
+Red Maple,170-8,26.2,15:04,<40,medium,0,"Bella, Lingshan, Emma",,Victoria
+Red Maple,170-8,26.2,15:04,>40,low,0,"Bella, Lingshan, Emma",,Victoria
+Hackberry,170-9,2.5,15:45,<40,low,2,"Bella, Lingshan, Emma",,Victoria
+Red Oak,170-10,2.5,15:10,<40,undetected,2,"Bella, Lingshan, Emma",,Victoria
+Red Oak,170-10,2.5,15:10,>40,low,2,"Bella, Lingshan, Emma",,Victoria
+Hackberry,170-11,2.5,15:17,<40,low,2,"Bella, Lingshan, Emma",,Victoria
+White Pine,170-12,23.2,15:20,<40,low,0,"Bella, Lingshan, Emma",,Victoria
+White Pine,170-12,23.2,15:20,>40,undetected,0,"Bella, Lingshan, Emma",,Victoria
+Red Oak,170-13,2.5,15:22,<40,undetected,1,"Bella, Lingshan, Emma",,Victoria
+Red Oak,170-13,2.5,15:22,>40,low,1,"Bella, Lingshan, Emma",,Victoria
+White Pine,170-14,26.9,15:24,<40,low,1,"Bella, Lingshan, Emma",,Victoria
+White Pine,170-14,26.9,15:24,>40,undetected,1,"Bella, Lingshan, Emma",,Victoria
+White Pine,170-15,20.2,15:30,<40,low,2,"Bella, Lingshan, Emma",,Victoria
+White Pine,170-15,20.2,15:30,>40,low,2,"Bella, Lingshan, Emma",,Victoria
+Beech,170-16,10.6,15:35,<40,high,2,"Bella, Lingshan, Emma",7 egg masses out of reach,Victoria
+Beech,170-16,10.6,15:35,>40,low,2,"Bella, Lingshan, Emma",,Victoria
+Red Maple,170-17,10.2,15:43,<40,medium,1,"Bella, Lingshan, Emma",,Victoria
+Red Maple,170-17,10.2,15:43,>40,low,1,"Bella, Lingshan, Emma",,Victoria
+Red Oak,170-18,2.5,15:41,<40,low,0,"Bella, Lingshan, Emma",,Victoria
