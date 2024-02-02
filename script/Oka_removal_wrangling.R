@@ -2,8 +2,7 @@
 
 #### egg data ####
 #loading data 
-setwd("~/Noas data")
-removal_counts <- read.csv("Oka_removal_counts.csv")
+removal_counts <- read.csv("input/Oka_removal_counts.csv")
 
 # quick visualizations
 summary(removal_counts)
