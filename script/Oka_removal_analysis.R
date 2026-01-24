@@ -1,252 +1,179 @@
-### Data cleaning ###
 
-#### egg data ####
 #loading data 
-removal_counts <- read.csv("input/Oka_removal_counts.csv")
-hatch_rates <- read.csv("input/Oka_hatch_rates.csv")
-                        
-# quick visualizations of removal counts
-summary(removal_counts)
+removal_counts <- read.csv("input/Oka_removal_counts_clean.csv")
+hatch_rates <- read.csv("input/Oka_hatch_rates_clean.csv")
+
+library(janitor)                       
+library(dplyr)
+library(ggplot2)
+library(esquisse)
+library(ordinal)
+library(lme4)
+library(tidyr)
+
+
+# removal counts analyses -------------------------------------------------
+
+# replace 'NA' with 'zero'
+# add "zero" as a valid factor level
+levels(removal_counts$quantity_removed) <-
+  c(levels(removal_counts$quantity_removed), "zero")
+
+# replace NA with "zero"
+removal_counts$quantity_removed[
+  is.na(removal_counts$quantity_removed)] <- "zero"
+
+
+#visual explorations
+ggplot(removal_counts, aes(distance_from_site_m, quantity_removed)) +
+  geom_boxplot() +
+  facet_wrap(~ tree_species)
+
+ggplot(removal_counts, aes(removal_height_cm, quantity_removed)) +
+  geom_boxplot()
+
+
+# Ordinal mixed-effects model ---------------------------------------------
+
+removal_counts$quantity_removed <- factor(
+  removal_counts$quantity_removed,
+  levels = c("zero", "low", "medium", "high"),
+  ordered = TRUE
+)
+
+
+#convert 'quantity removed' to 'factor'
 str(removal_counts)
+removal_counts$quantity_removed <- as.factor(removal_counts$quantity_removed)
+
+m0 <- clmm(
+  quantity_removed ~ tree_species +
+    removal_height_cm +
+    distance_from_site_m +
+    dbh_cm + 
+    (1 | id),
+  data = removal_counts)
+
+##adding interaction terms, one at a time
+
+#Species × Height - Are egg masses more common higher on certain tree species?
+m1 <- clmm(
+  quantity_removed ~ tree_species * removal_height_cm +
+    distance_from_site_m +
+    dbh_cm +
+    (1 | id),
+  data = removal_counts)
+summary(m1)
+
+#Distance × Height - more eggs near human disturbance?
+m2 <- clmm(
+  quantity_removed ~ tree_species +
+    removal_height_cm * distance_from_site_m +
+    dbh_cm +
+    (1 | id),
+  data = removal_counts)
+summary(m2)
+
+anova(m0, m1, m2)
+
+#other interactions that could be considered...
+#Species × Height - Are egg masses more common higher on certain tree species?
+#Distance × Tree Species - Are moths selecting different host trees closer to camps?\
+
+# Prediction probability plot ---------------------------------------------
+
+#Create prediction grid
+newdat <- removal_counts %>%
+  distinct(tree_species, removal_height_cm) %>%
+  mutate(
+    distance_from_site_m = mean(removal_counts$distance_from_site_m, na.rm = TRUE),
+    dbh_cm = mean(removal_counts$dbh_cm, na.rm = TRUE)
+  )
+
+nrow(newdat)
+# should be ~40
+
+names(beta)
+
+X <- model.matrix(
+  delete.response(terms(m1)),
+  newdat
+)
+
+X <- X[, colnames(X) %in% names(beta), drop = FALSE]
+
+stopifnot(length(beta) == ncol(X))
+
+eta <- as.vector(X %*% beta)
+theta <- m1$Theta
+
+levels(removal_counts$quantity_removed)
+# "zero" < "low" < "medium" < "high"
+
+#With 4 ordered categories, clmm estimates 3 thresholds
+#theta[1] : zero | low
+#theta[2] : low | medium
+#theta[3] : medium | high
+
+#The cumulative probabilities are:𝑃(𝑌≤𝑘)=logit−1(𝜃𝑘 −𝜂)
+
+#Convert linear predictor → probabilities
+logit <- function(x) 1 / (1 + exp(-x))
+
+P_le_high   <- logit(theta[1] - eta)
+P_le_low    <- logit(theta[2] - eta)
+P_le_medium <- logit(theta[3] - eta)
+
+p_high   <- P_le_high
+p_low    <- P_le_low    - P_le_high
+p_medium <- P_le_medium - P_le_low
+p_zero   <- 1 - P_le_medium
+
+#check - should be very close to 1
+range(p_high + p_low + p_medium + p_zero)
+# every row's probably sums to 1
+
+#bind predictions to grid
+pred_df <- cbind(
+  newdat,
+  high   = p_high,
+  low    = p_low,
+  medium = p_medium,
+  zero   = p_zero
+)
+
+#Convert to long format for ggplot
+pred_long <- pred_df |>
+  pivot_longer(
+    cols = c("high", "medium", "low", "zero"),
+    names_to = "removal_class",
+    values_to = "probability"
+  )
+
+pred_long$removal_class <- factor(
+  pred_long$removal_class,
+  levels = c("high", "medium", "low", "zero")
+)
+
+
+#Make the predicted probability plot
+ggplot(pred_long,
+       aes(x = removal_height_cm,
+           y = probability,
+           fill = removal_class)) +
+  geom_col(color = "black", width = 0.7) +
+  facet_wrap(~ tree_species) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x = "Removal height",
+    y = "Predicted probability",
+    fill = "Egg mass removal"
+  ) +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    strip.text = element_text(size = 8)
+  )
 
-# Egg Removal data cleaning ---------------------------------------------------
 
-library(janitor) #janitor cleans up column names.It removes all unique characters and replaces spaces with _.
-#piping through `dplyr`
-removal_counts_clean <- removal_counts %>%
-  clean_names() #Cleans names of an object (usually a data.frame)
 
-## there are 2 columns not needed (Notes, Entered_by)- let's remove them ##
-library(dplyr)
-removal_counts_clean <-removal_counts_clean %>% select(1:8)
-
-# if any column names need replacing
-colnames(removal_counts_clean)[colnames(removal_counts_clean)=="dbh_diameter_cm"] <- "dbh_cm"
-colnames(removal_counts_clean)[colnames(removal_counts_clean)=="species_genus"] <- "tree_species"
-
-# quick visualizations
-summary(removal_counts_clean)
-str(removal_counts_clean)
-
-# change species, removal height, quant removed to 'factor'; change DBH, dist from site to 'numerical'
-removal_counts_clean$dbh_cm <- as.numeric(removal_counts_clean$dbh_cm)
-removal_counts_clean$distance_from_site_m <- as.numeric(removal_counts_clean$distance_from_site_m)
-removal_counts_clean$tree_species <- as.factor(removal_counts_clean$tree_species)
-removal_counts_clean$removal_height_cm <- as.factor(removal_counts_clean$removal_height_cm)
-removal_counts_clean$quantity_removed <- as.factor(removal_counts_clean$quantity_removed)
-
-str(removal_counts_clean)
-
-unique(removal_counts_clean$dbh_cm)
-
-# replace [?] with 'NA'
-removal_counts_clean <- replace(removal_counts_clean, removal_counts_clean=='?', 'NA')
-
-unique(removal_counts_clean$tree_species)
-
-unique(removal_counts_clean$removal_height_cm)
-unique(removal_counts_clean$quantity_removed)
-# replace 'undetected' with 'none'
-removal_counts_clean <- replace(removal_counts_clean, removal_counts_clean=='undetected', 'none')
-
-unique(removal_counts_clean$distance_from_site_m)
-
-
-unique(removal_counts_clean$dbh_cm)
-unique(removal_counts_clean$tree_species)
-unique(removal_counts_clean$removal_height_cm)
-unique(removal_counts_clean$quantity_removed)
-unique(removal_counts_clean$distance_from_site_m)
-
-
-#visualize data
-#library(esquisse)
-#esquisser(egg_mass_counts_1)
-
-library(esquisse)
-esquisser(removal_counts_clean)
-
-library(ggplot2)
-
-
-write.csv(removal_counts_clean, "input/Oka_removal_counts_clean.csv")
-
-
-# Hatch rate data cleaning ------------------------------------------------
-
-# quick visualizations of removal counts
-summary(hatch_rates)
-str(hatch_rates)
-
-#janitor cleans up column names.It removes all unique characters and replaces 
-#spaces with _.
-#piping through `dplyr`
-hatch_rates_clean <- hatch_rates %>%
-  clean_names() #Cleans names of an object (usually a data.frame)
-
-## there are many columns not needed at the end, select ones to keep 
-hatch_rates_clean <-hatch_rates_clean %>% select(1:7)
-
-# nedd to remove top row; keep everything but
-hatch_rates_clean <- hatch_rates_clean %>%
-  slice(2:n())
-
-# if any column names need replacing
-colnames(hatch_rates_clean)[colnames(hatch_rates_clean)=="species_genus"] <- "tree_genus"
-colnames(hatch_rates_clean)[colnames(hatch_rates_clean)=="site"] <- "site_ID"
-colnames(hatch_rates_clean)[colnames(hatch_rates_clean)=="hatch_count"] <- "hatch"
-colnames(hatch_rates_clean)[colnames(hatch_rates_clean)=="estimated_hatch_counts"] <- "hatch_count"
-
-# quick visualizations
-summary(hatch_rates_clean)
-str(hatch_rates_clean)
-
-# change genus, removal height, quant removed to 'factor' 
-hatch_rates_clean$removal_height_cm <- as.factor(hatch_rates_clean$removal_height_cm)
-hatch_rates_clean$hatch <- as.factor(hatch_rates_clean$hatch)
-
-str(hatch_rates_clean)
-
-unique(hatch_rates_clean$tree_genus)
-unique(hatch_rates_clean$site_ID)
-unique(hatch_rates_clean$removal_height_cm)
-unique(hatch_rates_clean$mass_g)
-unique(hatch_rates_clean$hatch)
-unique(hatch_rates_clean$hatch_count)
-
-# replace non-tree objects with 'inanimate'
-hatch_rates_clean <- replace(hatch_rates_clean, hatch_rates_clean==
-                               'Picnic table','inanimate')
-hatch_rates_clean <- replace(hatch_rates_clean, hatch_rates_clean==
-                               'Post & Tent','inanimate')
-
-# replace '???' with 'NA'
-hatch_rates_clean <- replace(hatch_rates_clean, hatch_rates_clean==
-                               '???','NA')
-
-# replace '  ' with 'NA'
-hatch_rates_clean <- replace(hatch_rates_clean, hatch_rates_clean==
-                               '','NA')
-
-unique(hatch_rates_clean$tree_genus)
-unique(hatch_rates_clean$site_ID)
-unique(hatch_rates_clean$removal_height_cm)
-
-write.csv(hatch_rates_clean, "input/Oka_hatch_rates_clean.csv")
-
-#visualize data
-#library(esquisse)
-#esquisser(hatch_rates_clean)
-
-library(esquisse)
-esquisser(hatch_rates_clean)
-
-library(ggplot2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Extra code from Riikka's original script --------------------------------
-
-
-### Extra code from Riikka's original script ###
-egg_counts_1 <- replace(egg_counts_1, egg_counts_1==',', NA)
-# replace "no entry" with NA
-egg_counts_1 <- replace(egg_counts_1, egg_counts_1=='no entry', NA)
-# replace "none" with NA ? maybe not as this seems categorical
-egg_counts_1 <- replace(egg_counts_1, egg_counts_1=='none', 0)
-unique(egg_counts_1$Egg.Count)
-unique(egg_counts_1$Caterpillar.Count)
-
-# if any column names need replacing
-colnames(egg_counts_1)[colnames(egg_counts_1)=="Site.Name"] <- "Site_Name"
-
-#### caterpillar data ####
-#loading data 
-caterp_counts <- read.csv("MSB Caterpillar Counts.csv")
-
-# quick visualizations
-summary(caterp_counts)
-str(caterp_counts)
-unique(caterp_counts$Egg.Count)
-unique(caterp_counts$Site.Name)
-
-#library(janitor) #janitor cleans up column names.It removes all unique characters and replaces spaces with _.
-#piping through `dplyr`
-caterp_counts <- caterp_counts %>%
-  clean_names() #Cleans names of an object (usually a data.frame) 
-
-## let's remove notes column ##
-library(dplyr)
-caterp_counts_1 <-caterp_counts %>% select(-13)
-# let's check for inconsistencies in names etc
-unique(caterp_counts_1$dbh_cm)
-unique(caterp_counts_1$ )
-
-## there are some rows that are completely empty- we want to replace those with NA##
-# replace empty cells with NA
-caterp_counts_1 <- replace(caterp_counts_1, caterp_counts_1=='', NA)
-# replace "no entry" with NA (or with something else?)
-caterp_counts_1 <- replace(caterp_counts_1, caterp_counts_1=='no entry', NA)
-# replace "none" with NA ? maybe not as this seems categorical
-caterp_counts_1 <- replace(caterp_counts_1, caterp_counts_1=='none', 0)
-
-unique(caterp_counts_1$dbh_cm) #see "no entry "
-# replace "no entry " with NA (or with something else?)
-caterp_counts_1 <- replace(caterp_counts_1, caterp_counts_1=='no entry ', NA)
-unique(caterp_counts_1$tree_id) #you may want to change these to separate common name and scientific name columns
-
-## replace space between words with underscore
-library(tidyverse)
-caterp_counts_1 <- caterp_counts_1 %>%
-  mutate(tree_id = str_replace(tree_id, " ", "_"))
-
-# replace "none " with "none"
-caterp_counts_1 <- replace(caterp_counts_1, caterp_counts_1=='none ', "none")
-
-summary(caterp_counts_1)
-str(caterp_counts_1)
-
-## remove % and replace with nothing
-caterp_counts_1 <- caterp_counts_1 %>%
-  mutate(humidity = str_replace(humidity, "%", ""))
-
-# if any column names need replacing
-colnames(caterp_counts_1)[colnames(caterp_counts_1)=="humidity"] <- "humidity_percent"
-
-## some numeric columns are character here- let's change them
-caterp_counts_1$dbh_cm <- as.numeric(caterp_counts_1$dbh_cm)
-caterp_counts_1$humidity_percent <- as.numeric(caterp_counts_1$humidity_percent)
-
-summary(caterp_counts_1)
-str(caterp_counts_1)
-
-egg_mass_counts_1 %>%
-  filter(!is.na(temp_c)) %>%
-  filter(!is.na(humidity_percent)) %>%
-  filter(!is.na(in_center)) %>%
-  filter(!is.na(count_height)) %>%
-  filter(!is.na(egg_count)) %>%
-  filter(!is.na(caterpillar_count)) %>%
-  filter(!is.na(entered_by)) %>%
-  ggplot() +
-  aes(x = dbh_cm, y = egg_count) +
-  geom_boxplot(fill = "#2FD6BE") +
-  scale_x_continuous(trans = "log") +
-  coord_flip() +
-  theme_minimal()

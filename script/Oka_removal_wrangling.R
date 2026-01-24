@@ -44,8 +44,12 @@ removal_counts_clean <- replace(removal_counts_clean, removal_counts_clean=='?',
 
 unique(removal_counts_clean$tree_species)
 
+# replace 'bbi' with 'Birch'
+removal_counts_clean <- replace(removal_counts_clean, removal_counts_clean=='bbi','Birch')
+
 unique(removal_counts_clean$removal_height_cm)
 unique(removal_counts_clean$quantity_removed)
+
 # replace 'undetected' with 'none'
 removal_counts_clean <- replace(removal_counts_clean, removal_counts_clean=='undetected', 'none')
 
