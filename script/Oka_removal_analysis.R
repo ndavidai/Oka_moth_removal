@@ -8,8 +8,17 @@ library(dplyr)
 library(ggplot2)
 library(esquisse)
 library(ordinal)
-library(lme4)
 library(tidyr)
+library(ordinal)
+library(DHARMa)
+library(Matrix)
+library(lme4)
+library(glmmTMB)
+library(forcats)
+
+#install.packages("TMB")
+#install.packages("glmmTMB", type = "source")
+
 
 
 # removal counts analyses -------------------------------------------------
@@ -53,6 +62,7 @@ m0 <- clmm(
     dbh_cm + 
     (1 | id),
   data = removal_counts)
+summary(m0)
 
 ##adding interaction terms, one at a time
 
@@ -174,6 +184,123 @@ ggplot(pred_long,
     axis.text.x = element_text(angle = 45, hjust = 1),
     strip.text = element_text(size = 8)
   )
+
+
+# Hatch rate analysis -----------------------------------------------------
+
+#order hatch for an ordinal model
+
+hatch_rates <- hatch_rates %>%
+  mutate(
+    tree_genus = factor(tree_genus),
+    removal_height_cm = factor(removal_height_cm),
+    site_ID = factor(site_ID),
+    hatch = factor(hatch,
+                   levels = c("Low", "Medium", "High", "Very high"),
+                   ordered = TRUE)
+  )
+
+
+# Egg mass removed --------------------------------------------------------
+
+m_mass <- lmer(
+  log(mass_g + 0.01) ~ tree_genus + removal_height_cm + (1 | site_ID),
+  data = hatch_rates
+)
+
+summary(m_mass)
+anova(m_mass)
+
+
+# Hatch rates -------------------------------------------------------------
+
+# replace 'NA' with 'zero'
+# add "zero" as a valid factor level
+levels(hatch_rates$hatch) <-
+  c(levels(hatch_rates$hatch), "zero")
+
+# replace NA with "zero"
+hatch_rates$hatch[
+  is.na(hatch_rates$hatch)] <- "zero"
+
+m_hatch <- clmm(
+  hatch ~ tree_genus + removal_height_cm + (1 | site_ID),
+  data = hatch_rates
+)
+
+summary(m_hatch)
+
+#getting a Hessian warning because some genus x height x site combinations
+#are empty.  So will collapse hatch into 2 ordered levels, which will
+#preserve biological meaning and statistical stability, but improve structure
+
+hatch_rates <- hatch_rates %>%
+  mutate(
+    hatch2 = case_when(
+      hatch %in% c("zero", "Low", "Medium") ~ "Low",
+      hatch %in% c("High", "Very high") ~ "High"
+    ),
+    hatch2 = factor(hatch2, levels = c("Low", "High"), ordered = TRUE)
+  )
+
+#check data structure
+table(hatch_rates$hatch2, hatch_rates$tree_genus)
+table(hatch_rates$hatch2, hatch_rates$removal_height_cm)
+
+#refit the model with the collapsed data
+
+m_hatch2 <- clmm(
+  hatch2 ~ tree_genus + removal_height_cm + (1 | site_ID),
+  data = hatch_rates
+)
+summary(m_hatch2)
+
+#still getting warnings, so will collapse rare genera into 1 group
+hatch_rates$tree_group <- fct_collapse(
+  hatch_rates$tree_genus,
+  Other = c("Birch", "Beech", "Dead tree", "Hackberry", "inanimate", "Ash")
+)
+
+table(hatch_rates$tree_group, hatch_rates$hatch2)
+
+m_hatch2 <- clmm(
+  hatch2 ~ tree_group + removal_height_cm + (1 | site_ID),
+  data = hatch_rates
+)
+summary(m_hatch2)
+
+
+
+# Hatch counts ------------------------------------------------------------
+
+#check for overdispersion
+
+mean(hatch_rates$hatch_count)
+var(hatch_rates$hatch_count)
+
+m_count <- glmmTMB(
+  hatch_count ~ tree_genus + removal_height_cm + (1 | site_ID),
+  family = nbinom2,
+  data = hatch_rates
+)
+summary(m_count)
+
+#residual diagnostics
+
+sim_res <- simulateResiduals(m_count)
+plot(sim_res)
+
+#same model, but with the genera groupings from ‘hatch levels’ 
+m_count2 <- glmmTMB(
+  hatch_count ~ tree_group + removal_height_cm + (1 | site_ID),
+  family = nbinom2,
+  data = hatch_rates
+)
+summary(m_count2)
+
+sim_res2 <- simulateResiduals(m_count2)
+plot(sim_res2)
+
 
 
 
