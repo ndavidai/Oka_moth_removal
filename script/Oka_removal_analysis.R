@@ -41,6 +41,12 @@ ggplot(removal_counts, aes(distance_from_site_m, quantity_removed)) +
 ggplot(removal_counts, aes(removal_height_cm, quantity_removed)) +
   geom_boxplot()
 
+#check data structure
+table(removal_counts$quantity_removed, removal_counts$tree_species)
+table(removal_counts$quantity_removed, removal_counts$removal_height_cm)
+table(removal_counts$quantity_removed, removal_counts$dbh_cm)
+table(removal_counts$quantity_removed, removal_counts$distance_from_site_m)
+
 
 # Ordinal mixed-effects model ---------------------------------------------
 
@@ -86,6 +92,65 @@ summary(m2)
 
 anova(m0, m1, m2)
 
+#getting a Hessian warning in m1, with the tree species and removal height
+#interaction term, because some of the combinations
+#are empty.  So will collapse tree species into genera levels, which will
+#preserve biological meaning and statistical stability, but improve structure
+
+removal_counts <- removal_counts %>%
+  mutate(
+    tree_genus = case_when(
+      tree_species %in% c("Oak", "Rea Oak", "White Oak") ~ "Oak",
+      tree_species %in% c("Pine", "White Pine") ~ "Pine",
+      tree_species %in% c("Maple", "Red Maple", "Silver Maple") ~ "Maple",
+      tree_species %in% c("Beech", "American Beech") ~ "Beech",
+      tree_species %in% c("Birch", "White Birch") ~ "Birch",
+      tree_species %in% c("Ash", "Dead tree", "Hackberry") ~ "Other"
+    ),
+    tree_genus = factor(tree_genus, levels = 
+          c("Beech", "Birch", "Maple", "Oak", "Pine", "Other"), ordered = TRUE)
+  )
+
+#check data structure
+table(removal_counts$quantity_removed, removal_counts$tree_genus)
+
+#convert 'tree genus' to 'character'
+str(removal_counts)
+removal_counts$tree_genus <- as.character(removal_counts$tree_genus)
+str(removal_counts)
+
+#repeat all 3 models from above, with tree genera instead of species
+m3 <- clmm(
+  quantity_removed ~ tree_genus +
+    removal_height_cm +
+    distance_from_site_m +
+    dbh_cm + 
+    (1 | id),
+  data = removal_counts)
+summary(m3)
+
+##adding interaction terms, one at a time
+
+#Species × Height - Are egg masses more common higher on certain tree species?
+m4 <- clmm(
+  quantity_removed ~ tree_genus * removal_height_cm +
+    distance_from_site_m +
+    dbh_cm +
+    (1 | id),
+  data = removal_counts)
+summary(m4)
+
+#Distance × Height - more eggs near human disturbance?
+m5 <- clmm(
+  quantity_removed ~ tree_genus +
+    removal_height_cm * distance_from_site_m +
+    dbh_cm +
+    (1 | id),
+  data = removal_counts)
+summary(m5)
+
+anova(m3, m4, m5)
+
 #other interactions that could be considered...
 #Species × Height - Are egg masses more common higher on certain tree species?
 #Distance × Tree Species - Are moths selecting different host trees closer to camps?\
@@ -94,7 +159,7 @@ anova(m0, m1, m2)
 
 #Create prediction grid
 newdat <- removal_counts %>%
-  distinct(tree_species, removal_height_cm) %>%
+  distinct(tree_genus, removal_height_cm) %>%
   mutate(
     distance_from_site_m = mean(removal_counts$distance_from_site_m, na.rm = TRUE),
     dbh_cm = mean(removal_counts$dbh_cm, na.rm = TRUE)
@@ -106,7 +171,7 @@ nrow(newdat)
 names(beta)
 
 X <- model.matrix(
-  delete.response(terms(m1)),
+  delete.response(terms(m4)),
   newdat
 )
 
