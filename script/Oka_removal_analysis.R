@@ -23,6 +23,9 @@ library(forcats)
 
 # removal counts analyses -------------------------------------------------
 
+summary(removal_counts)
+str(removal_counts)
+
 # replace 'NA' with 'zero'
 # add "zero" as a valid factor level
 levels(removal_counts$quantity_removed) <-
@@ -46,6 +49,14 @@ table(removal_counts$quantity_removed, removal_counts$tree_species)
 table(removal_counts$quantity_removed, removal_counts$removal_height_cm)
 table(removal_counts$quantity_removed, removal_counts$dbh_cm)
 table(removal_counts$quantity_removed, removal_counts$distance_from_site_m)
+table(removal_counts$quantity_removed, removal_counts$Site_ID)
+
+
+#separate site ID into a separate variable that does not include tree #
+
+removal_counts$Site_ID <- factor(
+  sub("-.*$", "", removal_counts$id)
+)
 
 
 # Ordinal mixed-effects model ---------------------------------------------
@@ -61,12 +72,13 @@ removal_counts$quantity_removed <- factor(
 str(removal_counts)
 removal_counts$quantity_removed <- as.factor(removal_counts$quantity_removed)
 
+#with site as a random effect 
 m0 <- clmm(
   quantity_removed ~ tree_species +
     removal_height_cm +
     distance_from_site_m +
     dbh_cm + 
-    (1 | id),
+    (1 | Site_ID),
   data = removal_counts)
 summary(m0)
 
@@ -77,7 +89,7 @@ m1 <- clmm(
   quantity_removed ~ tree_species * removal_height_cm +
     distance_from_site_m +
     dbh_cm +
-    (1 | id),
+    (1 | Site_ID),
   data = removal_counts)
 summary(m1)
 
@@ -86,7 +98,7 @@ m2 <- clmm(
   quantity_removed ~ tree_species +
     removal_height_cm * distance_from_site_m +
     dbh_cm +
-    (1 | id),
+    (1 | Site_ID),
   data = removal_counts)
 summary(m2)
 
@@ -125,31 +137,61 @@ m3 <- clmm(
     removal_height_cm +
     distance_from_site_m +
     dbh_cm + 
-    (1 | id),
+    (1 | Site_ID),
   data = removal_counts)
 summary(m3)
 
-##adding interaction terms, one at a time
 
-#Species × Height - Are egg masses more common higher on certain tree species?
+#Species × Height 
 m4 <- clmm(
+  quantity_removed ~ tree_genus * removal_height_cm +
+    distance_from_site_m +
+    dbh_cm +
+    (1 | Site_ID),
+  data = removal_counts)
+summary(m4)
+
+#Distance × Height 
+m5 <- clmm(
+  quantity_removed ~ tree_genus +
+    removal_height_cm * distance_from_site_m +
+    dbh_cm +
+    (1 | Site_ID),
+  data = removal_counts)
+summary(m5)
+
+anova(m3, m4, m5)
+
+#with tree ID as a random effect
+
+m6 <- clmm(
+  quantity_removed ~ tree_genus +
+    removal_height_cm +
+    distance_from_site_m +
+    dbh_cm + 
+    (1 | id),
+  data = removal_counts)
+summary(m6)
+
+#Species × Height 
+m7 <- clmm(
   quantity_removed ~ tree_genus * removal_height_cm +
     distance_from_site_m +
     dbh_cm +
     (1 | id),
   data = removal_counts)
-summary(m4)
+summary(m7)
 
-#Distance × Height - more eggs near human disturbance?
-m5 <- clmm(
+#Distance × Height 
+m8 <- clmm(
   quantity_removed ~ tree_genus +
     removal_height_cm * distance_from_site_m +
     dbh_cm +
     (1 | id),
   data = removal_counts)
-summary(m5)
+summary(m8)
 
-anova(m3, m4, m5)
+anova(m3, m4, m5, m6, m7, m8)
 
 #other interactions that could be considered...
 #Species × Height - Are egg masses more common higher on certain tree species?
@@ -158,15 +200,44 @@ anova(m3, m4, m5)
 # Prediction probability plot ---------------------------------------------
 
 #Create prediction grid
-newdat <- removal_counts %>%
-  distinct(tree_genus, removal_height_cm) %>%
-  mutate(
-    distance_from_site_m = mean(removal_counts$distance_from_site_m, na.rm = TRUE),
-    dbh_cm = mean(removal_counts$dbh_cm, na.rm = TRUE)
-  )
+str(removal_counts$tree_genus)
+str(removal_counts$removal_height_cm)
+
+levels(removal_counts$tree_genus)
+levels(removal_counts$removal_height_cm)
+
+removal_counts$tree_genus <- factor(removal_counts$tree_genus)
+removal_counts$removal_height_cm <- factor(removal_counts$removal_height_cm)
+
+levels(removal_counts$tree_genus)
+levels(removal_counts$removal_height_cm)
+
+newdat <- expand.grid(
+  tree_genus = levels(removal_counts$tree_genus),
+  removal_height_cm = levels(removal_counts$removal_height_cm),
+  distance_from_site_m = mean(removal_counts$distance_from_site_m, na.rm = TRUE),
+  dbh_cm = mean(removal_counts$dbh_cm, na.rm = TRUE)
+)
+
+newdat$tree_genus <- factor(
+  newdat$tree_genus,
+  levels = levels(removal_counts$tree_genus)
+)
+
+newdat$removal_height_cm <- factor(
+  newdat$removal_height_cm,
+  levels = levels(removal_counts$removal_height_cm)
+)
+
+stopifnot(
+  nrow(newdat) > 0,
+  all(levels(newdat$tree_genus) == levels(removal_counts$tree_genus)),
+  all(levels(newdat$removal_height_cm) == levels(removal_counts$removal_height_cm))
+)
+
 
 nrow(newdat)
-# should be ~40
+# is 18
 
 names(beta)
 
@@ -175,12 +246,15 @@ X <- model.matrix(
   newdat
 )
 
-X <- X[, colnames(X) %in% names(beta), drop = FALSE]
+X <- X[, names(beta), drop = FALSE]
 
-stopifnot(length(beta) == ncol(X))
+stopifnot(
+  nrow(X) == nrow(newdat),
+  ncol(X) == length(beta)
+)
 
+theta <- m4$Theta
 eta <- as.vector(X %*% beta)
-theta <- m1$Theta
 
 levels(removal_counts$quantity_removed)
 # "zero" < "low" < "medium" < "high"
@@ -193,6 +267,7 @@ levels(removal_counts$quantity_removed)
 #The cumulative probabilities are:𝑃(𝑌≤𝑘)=logit−1(𝜃𝑘 −𝜂)
 
 #Convert linear predictor → probabilities
+
 logit <- function(x) 1 / (1 + exp(-x))
 
 P_le_high   <- logit(theta[1] - eta)
@@ -230,14 +305,13 @@ pred_long$removal_class <- factor(
   levels = c("high", "medium", "low", "zero")
 )
 
-
 #Make the predicted probability plot
 ggplot(pred_long,
        aes(x = removal_height_cm,
            y = probability,
            fill = removal_class)) +
   geom_col(color = "black", width = 0.7) +
-  facet_wrap(~ tree_species) +
+  facet_wrap(~ tree_genus) +
   scale_y_continuous(labels = scales::percent) +
   labs(
     x = "Removal height",
@@ -249,7 +323,6 @@ ggplot(pred_long,
     axis.text.x = element_text(angle = 45, hjust = 1),
     strip.text = element_text(size = 8)
   )
-
 
 # Hatch rate analysis -----------------------------------------------------
 
