@@ -91,9 +91,8 @@ hatch_rates_clean <- hatch_rates %>%
 ## there are many columns not needed at the end, select ones to keep 
 hatch_rates_clean <-hatch_rates_clean %>% select(1:7)
 
-# nedd to remove top row; keep everything but
-hatch_rates_clean <- hatch_rates_clean %>%
-  slice(2:n())
+# need to remove top row; keep everything but
+hatch_rates_clean <- hatch_rates_clean[-1, ]
 
 # if any column names need replacing
 colnames(hatch_rates_clean)[colnames(hatch_rates_clean)=="species_genus"] <- "tree_genus"
@@ -104,6 +103,15 @@ colnames(hatch_rates_clean)[colnames(hatch_rates_clean)=="estimated_hatch_counts
 # quick visualizations
 summary(hatch_rates_clean)
 str(hatch_rates_clean)
+
+# replace 'NA' with 'zero'
+# add "zero" as a valid factor level
+levels(hatch_rates_clean$hatch) <-
+  c(levels(hatch_rates_clean$hatch), "zero")
+
+# replace NA with "zero"
+hatch_rates_clean$hatch[
+  is.na(hatch_rates_clean$hatch)] <- "zero"
 
 # change genus, removal height, quant removed to 'factor' 
 hatch_rates_clean$removal_height_cm <- as.factor(hatch_rates_clean$removal_height_cm)
@@ -135,6 +143,9 @@ hatch_rates_clean <- replace(hatch_rates_clean, hatch_rates_clean==
 unique(hatch_rates_clean$tree_genus)
 unique(hatch_rates_clean$site_ID)
 unique(hatch_rates_clean$removal_height_cm)
+unique(hatch_rates_clean$hatch)
+str(hatch_rates_clean)
+
 
 write.csv(hatch_rates_clean, "input/Oka_hatch_rates_clean.csv")
 
